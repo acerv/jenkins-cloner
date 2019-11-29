@@ -1,0 +1,12 @@
+language: python
+
+services:
+  - docker
+
+before_install:
+  - docker run --name jenkins1 -d -v ci/jenkins1:/var/jenkins_home -p 8081:8080 -p 50001:50000 jenkins/jenkins:lts
+  - docker run --name jenkins2 -d -v ci/jenkins2:/var/jenkins_home -p 8082:8080 -p 50002:50000 jenkins/jenkins:lts
+
+script:
+  - chmod +x ./ci/run_tests.sh
+  - ./ci/run_tests.sh
