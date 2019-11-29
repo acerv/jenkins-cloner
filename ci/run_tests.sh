@@ -3,6 +3,14 @@
 # exit at first error
 set -e
 
+# create jenkins services
+docker run --name jenkins1 -d -v $(pwd)/ci/jenkins1:/var/jenkins_home -p 8081:8080 -p 50001:50000 jenkins/jenkins:lts
+docker run --name jenkins2 -d -v $(pwd)/ci/jenkins2:/var/jenkins_home -p 8082:8080 -p 50002:50000 jenkins/jenkins:lts
+
+# show jenkins folders
+ls -la ci/jenkins1
+ls -la ci/jenkins2
+
 # install jenkins-clone
 python setup.py install
 
