@@ -1,3 +1,5 @@
+.. image:: https://travis-ci.org/acerv/jenkins-cloner.svg?branch=master
+    :target: https://travis-ci.org/acerv/jenkins-cloner
 
 Introduction
 ============
