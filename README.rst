@@ -8,7 +8,7 @@ Jenkins cloner permits to clone:
 * slaves
 * jobs
 
-They can be cloned from one jenkins server to an another jenkins server.
+from one jenkins server to an another jenkins server.
 
 Command line::
 
@@ -23,22 +23,6 @@ Command line::
     -n, --nodes        clone nodes
     -d, --debug        debug mode
     --help             Show this message and exit.
-
-
-Installation
-============
-
-To install ``jenkins-cloner``, use virtualenv::
-
-    cd jenkins-cloner
-    virtualenv venv
-
-    # on windows
-    venv\Script\activate
-    # on linux
-    source venv/bin/activate
-
-    python setup.py install
 
 Configuration
 =============
@@ -70,6 +54,21 @@ To clone Jenkins server slaves into an another Jenkins server::
 To clone Jenkins server jobs into an another Jenkins server::
 
     jenkins-cloner -c config.ini -p
+
+Installation
+============
+
+To install ``jenkins-cloner``, use virtualenv::
+
+    cd jenkins-cloner
+    virtualenv venv
+
+    # on windows
+    venv\Script\activate
+    # on linux
+    source venv/bin/activate
+
+    python setup.py install
 
 License
 =======
