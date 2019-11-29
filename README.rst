@@ -49,9 +49,9 @@ To clone Jenkins server plugins into an another Jenkins server::
 
     jenkins-cloner -c config.ini -j
 
-To clone Jenkins server slaves into an another Jenkins server::
+To clone Jenkins server nodes into an another Jenkins server::
 
-    jenkins-cloner -c config.ini -s
+    jenkins-cloner -c config.ini -n
 
 To clone Jenkins server jobs into an another Jenkins server::
 
