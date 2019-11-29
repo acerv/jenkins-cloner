@@ -7,8 +7,8 @@ set -e
 python setup.py install
 
 # get jenkins passwords
-server1_password=$(cat ci/jenkins1/secrets/initialAdminPassword)
-server2_password=$(cat ci/jenkins2/secrets/initialAdminPassword)
+server1_password=$(docker exec jenkins1 cat /var/jenkins_home/secrets/initialAdminPassword)
+server2_password=$(docker exec jenkins2 cat /var/jenkins_home/secrets/initialAdminPassword)
 
 # create config.ini
 echo "
