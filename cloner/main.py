@@ -7,7 +7,10 @@
 """
 import click
 import traceback
-import configparser
+try:
+    from configparser import ConfigParser
+except ImportError:
+    from ConfigParser import SafeConfigParser as ConfigParser
 import cloner
 from cloner.jobs import JenkinsJobsCloner
 from cloner.nodes import JenkinsNodesCloner
@@ -18,7 +21,7 @@ def read_config(path):
     """
     Read the configuration file.
     """
-    config = configparser.ConfigParser()
+    config = ConfigParser()
     config.read(path)
     return config
 
