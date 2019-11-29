@@ -1,8 +1,12 @@
 language: python
-
-services:
-  - docker
+python:
+  - "2.7"
+  - "3.4"
+  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8"
 
 script:
-  - chmod +x ./ci/run_tests.sh
-  - ./ci/run_tests.sh
+  - python setup.py install
+  - jenkins-clone --help
