@@ -8,12 +8,27 @@ Jenkins cloner permits to clone:
 * slaves
 * jobs
 
-All can be cloned from one jenkins server to an another jenkins server.
+They can be cloned from one jenkins server to an another jenkins server.
+
+Command line::
+
+    Usage: jenkins-cloner [OPTIONS]
+
+    Jenkins master cloner tool
+
+    Options:
+    -c, --config TEXT  configuration file
+    -j, --jobs         clone jobs
+    -p, --plugins      clone plugins
+    -n, --nodes        clone nodes
+    -d, --debug        debug mode
+    --help             Show this message and exit.
+
 
 Installation
 ============
 
-To install ``jenkins-cloner``, use virtualenv:
+To install ``jenkins-cloner``, use virtualenv::
 
     cd jenkins-cloner
     virtualenv venv
@@ -29,7 +44,7 @@ Configuration
 =============
 
 Before using the application, a configuration file has to be defined.
-Suppose we call it ``config.ini``:
+Suppose we call it ``config.ini``::
 
     [server1]
     url = https://my.jenkins.server1.com/
@@ -44,15 +59,15 @@ Suppose we call it ``config.ini``:
 Cloning
 =======
 
-To clone Jenkins server plugins into an another Jenkins server:
+To clone Jenkins server plugins into an another Jenkins server::
 
     jenkins-cloner -c config.ini -j
 
-To clone Jenkins server slaves into an another Jenkins server:
+To clone Jenkins server slaves into an another Jenkins server::
 
     jenkins-cloner -c config.ini -s
 
-To clone Jenkins server jobs into an another Jenkins server:
+To clone Jenkins server jobs into an another Jenkins server::
 
     jenkins-cloner -c config.ini -p
 
